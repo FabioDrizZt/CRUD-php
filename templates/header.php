@@ -1,3 +1,7 @@
+<?php
+$url_base = "http://localhost/app/"
+    ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -22,7 +26,7 @@
                             class="visually-hidden">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Empleados</a>
+                    <a class="nav-link" href="<?php echo $url_base ?>secciones/empleados">Empleados</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Puestos</a>
