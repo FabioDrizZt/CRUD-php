@@ -1,9 +1,8 @@
 <?php require_once("../../templates/header.php") ?>
-Mostrar Empleados
-
+<h1>Empleados</h1>
 <div class="card">
     <div class="card-header">
-        Empleados
+        <a name="" id="" class="btn btn-primary" href="./crear.php" role="button">Agregar registro</a>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -27,7 +26,11 @@ Mostrar Empleados
                         <td>cv.pdf</td>
                         <td>profesor full stack</td>
                         <td>15/04/2020</td>
-                        <td> Carta | Editar | Eliminar </td>
+                        <td>
+                            <a name="" id="" class="btn btn-primary" href="#" role="button">Carta</a>
+                            <a name="" id="" class="btn btn-info" href="#" role="button">Editar</a>
+                            <a name="" id="" class="btn btn-danger" href="#" role="button"> Eliminar </a>
+                        </td>
                     </tr>
 
                 </tbody>
