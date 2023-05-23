@@ -1,3 +1,19 @@
+<?php
+
+if ($_POST) {
+    require_once("../../bd.php");
+    // Recolectar los datos del metodo POST
+    $nombredelpuesto = (isset($_POST["nombredelpuesto"]) ? $_POST["nombredelpuesto"] : "");
+    // Preparar la inserción de los datos
+    $sentencia = $conexion->prepare("INSERT INTO `tbl_puestos`(`id`, `nombredelpuesto`) 
+    VALUES (null,:nombredelpuesto)");
+    // Asignamos los valores que vienen del metodo POST a la consulta
+    $sentencia->bindValue(":nombredelpuesto", $nombredelpuesto);
+    $sentencia->execute();
+    header("Location:index.php");
+}
+
+?>
 <?php require_once("../../templates/header.php") ?>
 
 <div class="card">
