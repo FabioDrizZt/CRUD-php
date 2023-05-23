@@ -35,19 +35,20 @@ $lista_tbl_puestos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 </thead>
                 <tbody>
                     <?php foreach ($lista_tbl_puestos as $registro) { ?>
-                        <tr class="">
-                            <td scope="row">
-                                <?php echo $registro['id']; ?>
-                            </td>
-                            <td>
-                                <?php echo $registro['nombredelpuesto']; ?>
-                            </td>
-                            <td>
-                                <a name="" id="" class="btn btn-info" href="#" role="button">Editar</a>
-                                <a name="" id="" class="btn btn-danger"
-                                    href="index.php?txtID=<?php echo $registro['id']; ?>" role="button">Eliminar</a>
-                            </td>
-                        </tr>
+                    <tr class="">
+                        <td scope="row">
+                            <?php echo $registro['id']; ?>
+                        </td>
+                        <td>
+                            <?php echo $registro['nombredelpuesto']; ?>
+                        </td>
+                        <td>
+                            <a name="" id="" class="btn btn-info" href="editar.php?txtID=<?php echo $registro['id']; ?>"
+                                role="button">Editar</a>
+                            <a name="" id="" class="btn btn-danger"
+                                href="index.php?txtID=<?php echo $registro['id']; ?>" role="button">Eliminar</a>
+                        </td>
+                    </tr>
                     <?php } ?>
                 </tbody>
             </table>
