@@ -1,6 +1,17 @@
 <?php
 require_once("../../bd.php");
 
+if (isset($_GET["txtID"])) {
+    // Recolectar los datos del metodo GET
+    $txtID = (isset($_GET["txtID"]) ? $_GET["txtID"] : "");
+    // Preparar la eliminación de los datos
+    $sentencia = $conexion->prepare("DELETE FROM `tbl_puestos` WHERE `id`=:id");
+    // Asignamos los valores que vienen del metodo GET a la consulta
+    $sentencia->bindValue(":id", $txtID);
+    $sentencia->execute();
+    header("Location:index.php");
+}
+
 $sentencia = $conexion->prepare("SELECT * FROM `tbl_puestos`");
 $sentencia->execute();
 $lista_tbl_puestos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -33,7 +44,8 @@ $lista_tbl_puestos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                             </td>
                             <td>
                                 <a name="" id="" class="btn btn-info" href="#" role="button">Editar</a>
-                                <a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a>
+                                <a name="" id="" class="btn btn-danger"
+                                    href="index.php?txtID=<?php echo $registro['id']; ?>" role="button">Eliminar</a>
                             </td>
                         </tr>
                     <?php } ?>
