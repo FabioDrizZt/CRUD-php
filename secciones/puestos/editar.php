@@ -20,7 +20,7 @@ if ($_POST) {
     $sentencia->bindValue(":nombredelpuesto", $nombredelpuesto);
     $sentencia->bindValue(":id", $txtID);
     $sentencia->execute();
-    print_r($_POST);
+    header("Location:index.php");
 }
 ?>
 <?php require_once("../../templates/header.php") ?>
