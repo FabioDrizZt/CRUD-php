@@ -22,7 +22,7 @@
                     <tr class="">
                         <td scope="row">1</td>
                         <td>Fabio D. Argañaraz A.</td>
-                        <td>imagen.jpg/td>
+                        <td>imagen.jpg</td>
                         <td>cv.pdf</td>
                         <td>profesor full stack</td>
                         <td>15/04/2020</td>
