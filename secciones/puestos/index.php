@@ -1,7 +1,7 @@
 <?php
 require_once("../../bd.php");
 
-if (isset($_GET["txtID"])) {
+if (isset($_GET["txtID"])) { // lógica para eliminar un puesto
     // Recolectar los datos del metodo GET
     $txtID = (isset($_GET["txtID"]) ? $_GET["txtID"] : "");
     // Preparar la eliminación de los datos

@@ -1,5 +1,15 @@
 <?php
 require_once("../../bd.php");
+if (isset($_GET["txtID"])) { // lógica para eliminar un usuario
+    // Recolectar los datos del metodo GET
+    $txtID = (isset($_GET["txtID"]) ? $_GET["txtID"] : "");
+    // Preparar la eliminación de los datos
+    $sentencia = $conexion->prepare("DELETE FROM `tbl_usuarios` WHERE `id`=:id");
+    // Asignamos los valores que vienen del metodo GET a la consulta
+    $sentencia->bindValue(":id", $txtID);
+    $sentencia->execute();
+    header("Location:index.php");
+}
 $sentencia = $conexion->prepare("SELECT * FROM `tbl_usuarios`");
 $sentencia->execute();
 $lista_tbl_usuarios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -25,24 +35,25 @@ $lista_tbl_usuarios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 </thead>
                 <tbody>
                     <?php foreach ($lista_tbl_usuarios as $registro) { ?>
-                    <tr class="">
-                        <td scope="row">
-                            <?php echo $registro['id']; ?>
-                        </td>
-                        <td>
-                            <?php echo $registro['usuario']; ?>
-                        </td>
-                        <td>
-                            <?php echo $registro['password']; ?>
-                        </td>
-                        <td>
-                            <?php echo $registro['correo']; ?>
-                        </td>
-                        <td>
-                            <a name="" id="" class="btn btn-info" href="#" role="button">Editar</a>
-                            <a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a>
-                        </td>
-                    </tr>
+                        <tr class="">
+                            <td scope="row">
+                                <?php echo $registro['id']; ?>
+                            </td>
+                            <td>
+                                <?php echo $registro['usuario']; ?>
+                            </td>
+                            <td>
+                                <?php echo $registro['password']; ?>
+                            </td>
+                            <td>
+                                <?php echo $registro['correo']; ?>
+                            </td>
+                            <td>
+                                <a name="" id="" class="btn btn-info" href="#" role="button">Editar</a>
+                                <a name="" id="" class="btn btn-danger"
+                                    href="index.php?txtID=<?php echo $registro['id']; ?>" role="button">Eliminar</a>
+                            </td>
+                        </tr>
                     <?php } ?>
                 </tbody>
             </table>
