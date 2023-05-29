@@ -1,3 +1,10 @@
+<?php
+require_once("../../bd.php");
+$sentencia = $conexion->prepare("SELECT * FROM `tbl_usuarios`");
+$sentencia->execute();
+$lista_tbl_usuarios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+?>
 <?php require_once("../../templates/header.php") ?>
 <h1>Usuarios</h1>
 <div class="card">
@@ -17,16 +24,26 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach ($lista_tbl_usuarios as $registro) { ?>
                     <tr class="">
-                        <td scope="row">1</td>
-                        <td>DigitalMind</td>
-                        <td>******</td>
-                        <td>Fabio@digitalmind.com</td>
+                        <td scope="row">
+                            <?php echo $registro['id']; ?>
+                        </td>
+                        <td>
+                            <?php echo $registro['usuario']; ?>
+                        </td>
+                        <td>
+                            <?php echo $registro['password']; ?>
+                        </td>
+                        <td>
+                            <?php echo $registro['correo']; ?>
+                        </td>
                         <td>
                             <a name="" id="" class="btn btn-info" href="#" role="button">Editar</a>
                             <a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a>
                         </td>
                     </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>

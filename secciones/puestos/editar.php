@@ -34,7 +34,7 @@ if ($_POST) {
             <div class="mb-3">
                 <label for="txtID" class="form-label">ID:</label>
                 <input type="text" class="form-control" name="txtID" id="txtID" aria-describedby="helpId"
-                    value="<?php echo $txtID; ?>" placeholder="">
+                    value="<?php echo $txtID; ?>" placeholder="" readonly>
                 <label for="nombredelpuesto" class="form-label">Nombre del puesto</label>
                 <input type="text" class="form-control" name="nombredelpuesto" id="nombredelpuesto"
                     aria-describedby="helpId" value="<?php echo $nombredelpuesto; ?>" placeholder="">
