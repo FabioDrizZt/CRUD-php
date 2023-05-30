@@ -43,13 +43,14 @@ $lista_tbl_usuarios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                 <?php echo $registro['usuario']; ?>
                             </td>
                             <td>
-                                <?php echo $registro['password']; ?>
+                                *******
                             </td>
                             <td>
                                 <?php echo $registro['correo']; ?>
                             </td>
                             <td>
-                                <a name="" id="" class="btn btn-info" href="#" role="button">Editar</a>
+                                <a name="" id="" class="btn btn-info" href="editar.php?txtID=<?php echo $registro['id']; ?>"
+                                    role="button">Editar</a>
                                 <a name="" id="" class="btn btn-danger"
                                     href="index.php?txtID=<?php echo $registro['id']; ?>" role="button">Eliminar</a>
                             </td>
