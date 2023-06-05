@@ -85,8 +85,8 @@ require_once("../../templates/header.php") ?>
                     <select class="form-select form-select-lg" name="idpuesto" id="idpuesto">
                         <option selected>Selecione uno</option>
                         <?php foreach ($lista_tbl_puestos as $registro) { ?>
-                            <option value="<?php echo $registro['id'] ?>"><?php echo $registro['nombredelpuesto'] ?>
-                            </option>
+                        <option value="<?php echo $registro['id'] ?>"><?php echo $registro['nombredelpuesto'] ?>
+                        </option>
                         <?php } ?>
                     </select>
                 </div>
