@@ -58,37 +58,39 @@ require_once("../../templates/header.php") ?>
                 </thead>
                 <tbody>
                     <?php foreach ($lista_tbl_empleados as $registro) { ?>
-                    <tr class="">
-                        <td scope="row">
-                            <?php echo $registro['id']; ?>
-                        </td>
-                        <td>
-                            <?php echo $registro['primernombre']; ?>
-                            <?php echo $registro['segundonombre']; ?>
-                            <?php echo $registro['primerapellido']; ?>
-                            <?php echo $registro['segundoapellido']; ?>
-                        </td>
-                        <td>
-                            <img width="50" class="img-fluid rounded" src="./img/<?php echo $registro['foto']; ?>" />
-                        </td>
-                        <td>
-                            <a href="./cv/<?php echo $registro['cv']; ?>">CV</a>
+                        <tr class="">
+                            <td scope="row">
+                                <?php echo $registro['id']; ?>
+                            </td>
+                            <td>
+                                <?php echo $registro['primernombre']; ?>
+                                <?php echo $registro['segundonombre']; ?>
+                                <?php echo $registro['primerapellido']; ?>
+                                <?php echo $registro['segundoapellido']; ?>
+                            </td>
+                            <td>
+                                <img width="50" class="img-fluid rounded" src="./img/<?php echo $registro['foto']; ?>" />
+                            </td>
+                            <td>
+                                <a href="./cv/<?php echo $registro['cv']; ?>">CV</a>
 
-                        </td>
-                        <td>
-                            <?php echo $registro['puesto']; ?>
-                        </td>
-                        <td>
-                            <?php echo $registro['fechadeingreso']; ?>
-                        </td>
-                        <td>
-                            <a name="" id="" class=" btn btn-primary" href="#" role="button">Carta</a>
-                            <a name="" id="" class="btn btn-info" href="editar.php?txtID=<?php echo $registro['id']; ?>"
-                                role="button">Editar</a>
-                            <a name="" id="" class="btn btn-danger"
-                                href="index.php?txtID=<?php echo $registro['id']; ?>" role="button">Eliminar</a>
-                        </td>
-                    </tr>
+                            </td>
+                            <td>
+                                <?php echo $registro['puesto']; ?>
+                            </td>
+                            <td>
+                                <?php echo $registro['fechadeingreso']; ?>
+                            </td>
+                            <td>
+                                <a name="" id="" class=" btn btn-primary"
+                                    href="carta_recomendacion.php?txtID=<?php echo $registro['id']; ?>"
+                                    role="button">Carta</a>
+                                <a name="" id="" class="btn btn-info" href="editar.php?txtID=<?php echo $registro['id']; ?>"
+                                    role="button">Editar</a>
+                                <a name="" id="" class="btn btn-danger"
+                                    href="index.php?txtID=<?php echo $registro['id']; ?>" role="button">Eliminar</a>
+                            </td>
+                        </tr>
                     <?php } ?>
                 </tbody>
             </table>
