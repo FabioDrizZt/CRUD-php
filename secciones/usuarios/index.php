@@ -23,7 +23,7 @@ $lista_tbl_usuarios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table">
+            <table class="table" id="tabla_id">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
@@ -35,26 +35,26 @@ $lista_tbl_usuarios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 </thead>
                 <tbody>
                     <?php foreach ($lista_tbl_usuarios as $registro) { ?>
-                        <tr class="">
-                            <td scope="row">
-                                <?php echo $registro['id']; ?>
-                            </td>
-                            <td>
-                                <?php echo $registro['usuario']; ?>
-                            </td>
-                            <td>
-                                *******
-                            </td>
-                            <td>
-                                <?php echo $registro['correo']; ?>
-                            </td>
-                            <td>
-                                <a name="" id="" class="btn btn-info" href="editar.php?txtID=<?php echo $registro['id']; ?>"
-                                    role="button">Editar</a>
-                                <a name="" id="" class="btn btn-danger"
-                                    href="index.php?txtID=<?php echo $registro['id']; ?>" role="button">Eliminar</a>
-                            </td>
-                        </tr>
+                    <tr class="">
+                        <td scope="row">
+                            <?php echo $registro['id']; ?>
+                        </td>
+                        <td>
+                            <?php echo $registro['usuario']; ?>
+                        </td>
+                        <td>
+                            *******
+                        </td>
+                        <td>
+                            <?php echo $registro['correo']; ?>
+                        </td>
+                        <td>
+                            <a name="" id="" class="btn btn-info" href="editar.php?txtID=<?php echo $registro['id']; ?>"
+                                role="button">Editar</a>
+                            <a name="" id="" class="btn btn-danger"
+                                href="index.php?txtID=<?php echo $registro['id']; ?>" role="button">Eliminar</a>
+                        </td>
+                    </tr>
                     <?php } ?>
                 </tbody>
             </table>
