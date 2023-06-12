@@ -86,7 +86,7 @@ if ($_POST) {
     $sentencia->bindValue(":fechadeingreso", $fechadeingreso);
     $sentencia->bindValue(":id", $txtID);
     $sentencia->execute();
-    header("Location:index.php");
+    header("Location:index.php?mensaje='Empleado editado correctamente'");
 }
 $sentencia = $conexion->prepare("SELECT * FROM `tbl_puestos`");
 $sentencia->execute();
@@ -136,14 +136,14 @@ require_once("../../templates/header.php") ?>
                         </option>
                         <?php foreach ($lista_tbl_puestos as $registro) {
                             if ($registro['id'] == $idpuesto) { ?>
-                        <option selected value="<?php echo $registro['id'] ?>">
-                            <?php echo $registro['nombredelpuesto'] ?>
-                        </option>
-                        <?php } else { ?>
-                        <option value="<?php echo $registro['id'] ?>">
-                            <?php echo $registro['nombredelpuesto'] ?>
-                        </option>
-                        <?php }
+                                <option selected value="<?php echo $registro['id'] ?>">
+                                    <?php echo $registro['nombredelpuesto'] ?>
+                                </option>
+                            <?php } else { ?>
+                                <option value="<?php echo $registro['id'] ?>">
+                                    <?php echo $registro['nombredelpuesto'] ?>
+                                </option>
+                            <?php }
                         } ?>
                     </select>
                 </div>

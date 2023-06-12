@@ -44,7 +44,7 @@ if ($_POST) {
     $sentencia->bindValue(":fechadeingreso", $fechadeingreso);
 
     $sentencia->execute();
-    header("Location:index.php");
+    header("Location:index.php?mensaje='Empleado creado correctamente'");
 }
 $sentencia = $conexion->prepare("SELECT * FROM `tbl_puestos`");
 $sentencia->execute();
@@ -85,8 +85,8 @@ require_once("../../templates/header.php") ?>
                     <select class="form-select form-select-lg" name="idpuesto" id="idpuesto">
                         <option selected>Selecione uno</option>
                         <?php foreach ($lista_tbl_puestos as $registro) { ?>
-                        <option value="<?php echo $registro['id'] ?>"><?php echo $registro['nombredelpuesto'] ?>
-                        </option>
+                            <option value="<?php echo $registro['id'] ?>"><?php echo $registro['nombredelpuesto'] ?>
+                            </option>
                         <?php } ?>
                     </select>
                 </div>
